@@ -88,7 +88,7 @@ if __name__ == "__main__":
 The requirements.txt file contains dependencies for app.py. In this file, add the flask requirement:
 
 ```
-flask==2.0.1
+flask==1.1.2
 ```
 
 ## Create the buildspec.yml file

@@ -499,3 +499,12 @@ TBD - github job status
 
 Finally, we can see that the ECS Task Definition has been updated to reflect the new application container image.  Note that the Git commit hash is used as the container image tag.
 
+
+
+----
+
+npm install -g aws-cdk --force
+
+https://docs.aws.amazon.com/cdk/latest/guide/getting_started.html
+
+IAM users perms?
