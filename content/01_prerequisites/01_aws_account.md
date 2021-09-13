@@ -4,7 +4,13 @@ chapter = false
 weight = 1
 +++
 
-You can complete this workshop at an AWS event where a temporary account is provided for you or as a self-guided workshop on your own, in your own AWS account.
+You can complete this workshop at an AWS event where a temporary account is provided for you or in your own AWS account.
+
+### Using Your Own AWS Account?
+
+If you are not completing this workshop as part of an organized event and already have an AWS account created, you can sign into the AWS Management Console [here](https://console.aws.amazon.com/). If you need to create an AWS account, you can find more information on doing that [here](https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/).
+
+Once your account is created, return to the next section.
 
 ### Using a Temporary AWS Account
 
@@ -17,10 +23,6 @@ Click on the "Click here to access" link in the green box. A new tab will open i
 ![](/images/accept-terms.png)
 
 Next, you'll be presented with the EventEngine dashboard. Here, you can click the "AWS Console" button and then click the "Open AWS Console" button to access the AWS Management Console.
-
-##### Using Your Own AWS Account?
-
-If you are not completing this workshop as part of an organized event and already have an AWS account created, you can sign into the AWS Management Console [here](https://console.aws.amazon.com/). If you need to create an AWS account, you can find more information on doing that [here](https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/).
 
 ### AWS Free Tier
 
