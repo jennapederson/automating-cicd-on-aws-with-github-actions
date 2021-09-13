@@ -1,0 +1,21 @@
+languageCode = "en-us"
+title = " Automating CI/CD on AWS with GitHub Actions"
+theme = "hugo-theme-learn"
+uglyurls=true
+RelativeURLs=true
+
+[params]
+themeVariant = "mine"
+showVisitedLinks = true
+author = "Jenna Pederson, Kris Howard"
+description = "Automating CI/CD on AWS with GitHub Actions"
+disableSearch = true
+disableAssetsBusting = false
+disableLanguageSwitchingButton = true
+disableShortcutsTitle=true
+
+[[menu.shortcuts]]
+name = "<i class='fab fa-twitter fa-lg'></i> @jennapederson"
+identifier = "tw"
+url = "https://twitter.com/intent/user?screen_name=jennapederson"
+weight = 1
