@@ -1,5 +1,5 @@
 +++
-title = "Create GitHub Action"
+title = "4. Create GitHub Action"
 chapter = true
 weight = 60
 +++

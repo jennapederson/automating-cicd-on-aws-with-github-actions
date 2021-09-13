@@ -1,5 +1,5 @@
 +++
-title = "Create a basic Flask web app"
+title = "1. Create a basic Flask web app"
 chapter = true
 weight = 30
 +++

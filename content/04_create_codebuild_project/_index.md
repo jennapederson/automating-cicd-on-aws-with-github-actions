@@ -1,5 +1,5 @@
 +++
-title = "Create ECS Infrastructure"
+title = "2. Create ECS Infrastructure"
 chapter = true
 weight = 40
 +++

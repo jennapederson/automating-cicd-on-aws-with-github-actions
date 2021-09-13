@@ -1,5 +1,5 @@
 +++
-title = "Create an AWS CodeBuild Project"
+title = "3. Create a CodeBuild Project"
 chapter = true
 weight = 50
 +++
