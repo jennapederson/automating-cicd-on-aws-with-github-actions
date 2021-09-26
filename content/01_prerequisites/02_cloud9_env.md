@@ -24,4 +24,4 @@ You have IDE capabilities built-in into this environment:
 
 ![](/images/cloud9-ide.png)
 
-Now you're ready for the workshop!
+Next, you'll need to set up your GitHub account.

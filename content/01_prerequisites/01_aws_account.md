@@ -10,7 +10,11 @@ You can complete this workshop at an AWS event where a temporary account is prov
 
 If you are not completing this workshop as part of an organized event and already have an AWS account created, you can sign into the AWS Management Console [here](https://console.aws.amazon.com/). If you need to create an AWS account, you can find more information on doing that [here](https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/).
 
-Once your account is created, return to the next section.
+You may have been issued an AWS credit code to cover basic charges and encourage you to keep learning after this workshop is over. You can apply the credit code we issued you by clicking the "click here" link highlighted in the screenshot below.
+
+![](/images/credit-code-resources.png)
+
+Once your account is created, return to the next step, [Setup Cloud9 Environment]({{< ref "02_cloud9_env" >}} "Setup Cloud9 Environment").
 
 ### Using a Temporary AWS Account
 
