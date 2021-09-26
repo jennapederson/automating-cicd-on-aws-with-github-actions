@@ -6,64 +6,74 @@ weight = 30
 
 # Create a basic Flask web app
 
-## Create GitHub repo and initialize project
+## 1. Initialize project
 
 To get started creating the components necessary to build our example architecture, we need a project directory and GitHub repository.
 
-From the command line, make the `demo-github-actions` project directory and move into it:
+Go to your Cloud9 development environment, and find the command line tab in the lower right.
+
+![](/images/cloud9-command-line.png)
+
+From the command line, make the `demo-github-actions` project directory and move into it using this command:
 
 ```
 mkdir demo-github-actions && cd demo-github-actions
 ```
 
-Initialize the git repository:
+Then, let's update the default branch in git to use `main`:
 
 ```
+git config --global init.defaultBranch main
+```
+
+And initialize the git repository:
+
+``` 
 git init
 ```
 
 Create the following files:
 
+{{% notice tip %}}
+You can create the empty files quickly using the `touch` command. If you'd like to do it manually, you can use the File -> New File menu to create each of the files below.
+{{% /notice %}}
+
 ```
 touch Dockerfile app.py app_test.py buildspec.yml requirements.txt task-definition.json
 ```
 
-Open VSCode
+## 2. Create a basic Flask web app
 
-```
-code .
-```
+We are going to write a very basic web app using Flask. Flask is a micro web framework written in Python.
 
-## Create a basic Flask web app
+Open the `app.py` file from the left navigation pane:
 
-We are going to write a very basic web app using Flask. Flask is a micro web framework written in Python. Add this basic Flask code to the app.py file. 
+![](/images/cloud9-open-file.png)
+
+And add this basic Flask code to `app.py` and save the file.
 
 ```
 """Main application file"""
 from flask import Flask
 app = Flask(__name__)
-```
 
-In the same file, create a flask route which will reverse any string that is provided.
 
-```
 @app.route('/<random_string>')
 def returnBackwardsString(random_string):
     """Reverse and return the provided URI"""
-    return "Broken unit test!"
-```
+    return "".join(reversed(random_string))
 
-Add some code to run the app and listen on port 8080
-
-```
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8080)
 ```
-## Create the test file
 
-The app_test.py file is a unit test file for app.py to ensure that the string is reversed correctly.
+This creates the Flask app, adds a route to reverse any string that is provided, and then runs the app and listens on port 8080.
 
-In the app_test.py file, add:
+## 3. Create the test file
+
+The `app_test.py` file is a unit test file for `app.py` to ensure that the string is reversed correctly.
+
+In the `app_test.py` file, add:
 
 ```
 """Unit test file for app.py"""
@@ -83,18 +93,21 @@ if __name__ == "__main__":
     unittest.main()
 ```
 
-## Create the requirements.txt file
+Save the file. 
 
-The requirements.txt file contains dependencies for app.py. In this file, add the flask requirement:
+## 4. Create the requirements.txt file
+
+The `requirements.txt` file contains dependencies for `app.py`. In this file, add the flask requirement:
 
 ```
 flask==1.1.2
 ```
 
-## Create the buildspec.yml file
+Save the file. 
 
+## 5. Create the buildspec.yml file
 
-The buildspec.yml file contains instructions for AWS CodeBuild to run our unit tests. Refer to the [Build Specification Reference](https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html) for more information about the capabilities and syntax available for buildspec files.
+The `buildspec.yml` file contains instructions for AWS CodeBuild to run our unit tests. Refer to the [Build Specification Reference](https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html) for more information about the capabilities and syntax available for buildspec files.
 
 ```
 version: 0.2
@@ -108,9 +121,11 @@ phases:
       - python app_test.py
 ```
 
-## Create a Docker File name Dockerfile
+Save the file. 
 
-We are creating a container-based application, so we are going to need a Dockerfile. A Dockerfile gives the instructions to [Docker](https://www.docker.com/) on how to create a container from the app.
+## 6. Create a Docker File name Dockerfile
+
+We are creating a container-based application, so we are going to need a `Dockerfile`. A `Dockerfile` gives the instructions to [Docker](https://www.docker.com/) on how to create a container from the app.
 
 ```
 FROM python:3
@@ -125,9 +140,11 @@ COPY app.py ./
 CMD python app.py
 ```
 
-## Create a task-definition.json file
+Save the file. 
 
-The task-definition.json file contains specifications for an ECS Task Definition. In this file, replace the placeholder value (<YOUR_AWS_ACCOUNT_ID>) with your AWS Account ID. You can find your AWS Account ID in the AWS Console, in the upper right drop-down menu under your login info. It is labeled "My Account".
+## 7. Create a task-definition.json file
+
+The `task-definition.json` file contains specifications for an ECS Task Definition. In this file, replace the placeholder value (<YOUR_AWS_ACCOUNT_ID>) with your AWS Account ID. You can find your AWS Account ID in the AWS Console, in the upper right drop-down menu under your login info. It is labeled "My Account".
 
 ```
 {
@@ -160,12 +177,38 @@ The task-definition.json file contains specifications for an ECS Task Definition
 }
 ```
 
-The end result of this step should be a GitHub repository containing all application, test, and deployment files.
+Be sure all of your files have been saved in the editor.
 
-## Commit your changes and push your code to GitHub origin.
+## 8. Commit your changes
 
-Commit your changes:
+The end result of this step should be a git repository containing all application, test, and deployment files. Commit your changes:
 
 ```
 git add . && git commit -m "Initial commit - basic Flask app"
 ```
+
+## 9. Create GitHub repository
+
+Now we need to create a repository on GitHub and push our local changes to it. Go to https://github.com and select the "New" button to create a new repository. Enter `demo-github-actions` for the repository name and select the "Create repository" to create it.
+
+![](/images/create-github-repo.png)
+
+## 10. Push local changes to GitHub
+
+Go back to the terminal in your Cloud9 development environment and add the GitHub remote repository as origin:
+
+```
+git remote add origin git@github.com:<YOUR GITHUB PROFILE>/demo-github-actions.git
+```
+
+You can also find this command at the bottom of your brand new repository on GitHub.
+
+Then push your local changes:
+
+```
+git push -u origin main
+```
+
+When prompted for a username and password, enter your GitHub username and the personal access token you created earlier. If everything goes well, your code will show up in the repository you created on GitHub.
+
+Now, we'll create the Amazon ECS Infrastructure that we'll be deploying our app to using the Cloud Development Kit (CDK).
