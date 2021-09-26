@@ -1,5 +1,5 @@
 +++
-title = "6. Fix the broken build"
+title = "6. Fix the broken build (optional)"
 chapter = true
 weight = 80
 +++

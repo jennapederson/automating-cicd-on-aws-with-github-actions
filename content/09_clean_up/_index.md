@@ -1,7 +1,7 @@
 +++
-title = "Cleaning Up"
-chapter = false
-weight = 2
+title = "7. Clean Up"
+chapter = true
+weight = 90
 +++
 
 {{% notice note %}}
