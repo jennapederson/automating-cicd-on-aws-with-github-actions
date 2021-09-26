@@ -69,7 +69,7 @@ if __name__ == '__main__':
 
 This creates the Flask app, adds a route to reverse any string that is provided, and then runs the app and listens on port 8080.
 
-## 3. Create the test file
+## 3. Update the test file
 
 The `app_test.py` file is a unit test file for `app.py` to ensure that the string is reversed correctly.
 
@@ -95,7 +95,7 @@ if __name__ == "__main__":
 
 Save the file. 
 
-## 4. Create the requirements.txt file
+## 4. Update the requirements.txt file
 
 The `requirements.txt` file contains dependencies for `app.py`. In this file, add the flask requirement:
 
@@ -105,7 +105,7 @@ flask==1.1.2
 
 Save the file. 
 
-## 5. Create the buildspec.yml file
+## 5. Update the buildspec.yml file
 
 The `buildspec.yml` file contains instructions for AWS CodeBuild to run our unit tests. Refer to the [Build Specification Reference](https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html) for more information about the capabilities and syntax available for buildspec files.
 
@@ -123,7 +123,7 @@ phases:
 
 Save the file. 
 
-## 6. Create a Docker File name Dockerfile
+## 6. Update the Dockerfile
 
 We are creating a container-based application, so we are going to need a `Dockerfile`. A `Dockerfile` gives the instructions to [Docker](https://www.docker.com/) on how to create a container from the app.
 
@@ -142,7 +142,7 @@ CMD python app.py
 
 Save the file. 
 
-## 7. Create a task-definition.json file
+## 7. Update the task-definition.json file
 
 The `task-definition.json` file contains specifications for an ECS Task Definition. In this file, replace the placeholder value (<YOUR_AWS_ACCOUNT_ID>) with your AWS Account ID. You can find your AWS Account ID in the AWS Console, in the upper right drop-down menu under your login info. It is labeled "My Account".
 
