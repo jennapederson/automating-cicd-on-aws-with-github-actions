@@ -36,6 +36,8 @@ Go back to the AWS Console and navigate to [ECR](https://console.aws.amazon.com/
 
 Select the `ecs-devops-sandbox-repository` repository and then press the "Delete" button. Enter the confirmation text, noting that all of our container images will also be deleted. 
 
+![](/images/ecr-delete-repository.png)
+
 ## 2. Delete the Cloud9 environment
 
 In the AWS Console, navigate to the Cloud9 service.
