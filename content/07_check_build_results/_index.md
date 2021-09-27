@@ -20,8 +20,6 @@ Then you can drill into that specific run by selecting the "Build run" link.
 
 After the CodeBuild build runs, then it reports the successful or unsuccessful status to GitHub.
 
-TBD IMAGE - GitHub failure
+TBD IMAGE - GitHub success
 
-Because our GitHub workflow detected the status of the commit to be a failure, the workflow did not proceed past the “Check commit status” step.
-
-TBD IMAGE - failed job on GitHub
+But what happens if our build is failing? Let's see how to fix it in the next step!
