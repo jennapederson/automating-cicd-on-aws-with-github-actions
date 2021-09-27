@@ -27,7 +27,23 @@ Once you've made the changes to the aws.yml workflow file above, select "Start c
 
 ## 2. Create IAM user with programmatic access
 
-TBD - Create an IAM user and note the AWS ACCESS KEY ID and the AWS SECRET ACCESS KEY for later.
+In the AWS Console, navigate to [IAM](https://console.aws.amazon.com/iam/home) to manage your AWS users.
+
+![](/images/nav-iam.png)
+
+Under "Users", click "Add users" and set the "User name" to `github-actions-user`. For "AWS access type" check "Access key - Programmatic access".
+
+![](/images/iam-create-user.png)
+
+Press "Next: Permissions".
+
+Next, select "Attach existing policies directly" and check "AdministratorAccess".
+
+![](/images/iam-policy.png)
+
+Press "Next: Tags" and then press "Next: Review" and "Create user".
+
+Note down the "AWS ACCESS KEY ID" and the "AWS SECRET ACCESS KEY" to use in the next step. Treat these like a username and password. If you lose the "AWS SECRET ACCESS KEY", you'll need to generate a new one.
 
 ## 3. Setup Secrets for GitHub Action
 
