@@ -22,3 +22,4 @@ In addition to the Clean Up step in the workshop, if you are running through thi
 
 IAM role: codebuild-ecs-devops-sandbox-service-role
 IAM policy: CodeBuildBasePolicy-ecs-devops-sandbox-us-east-1
+IAM policy: ecs-devops-sandbox-policy
