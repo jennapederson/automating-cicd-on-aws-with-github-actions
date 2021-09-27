@@ -67,8 +67,7 @@ class EcsDevopsSandboxCdkStack(core.Stack):
 
         ecr_repository = ecr.Repository(self,
                                             "ecs-devops-sandbox-repository",
-                                            repository_name="ecs-devops-sandbox-repository",
-                                            removal_policy=core.RemovalPolicy.DESTROY)
+                                            repository_name="ecs-devops-sandbox-repository")
 
         vpc = ec2.Vpc(self,
                         "ecs-devops-sandbox-vpc",
