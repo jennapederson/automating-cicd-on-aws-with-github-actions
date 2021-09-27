@@ -13,7 +13,7 @@ In the interest of time, we recommend creating a [personal access token](https:/
 {{% /notice %}}
 
 {{% notice note %}}
-Save the personal access token like you would a password. You'll need it later.
+Create your personal access token with "repo" and "workflow" scopes. Then save the personal access token like you would a password. You'll need it later.
 {{% /notice %}}
 
 Now that you have a GitHub account to use, you're ready for the workshop!
