@@ -6,7 +6,7 @@ weight = 70
 
 # Check the build results
 
-When this code is pushed to the main branch of the repository, we can see that CodeBuild is automatically invoked via webhook and executes the application tests. And it looks like our first build is successful!
+When this code is pushed to the main branch of the repository, we can see that CodeBuild is automatically invoked via webhook and executes the application tests. Go to [CodeBuild](https://console.aws.amazon.com/codesuite/codebuild/projects?region=us-east-1) in the AWS Console to check it out. It looks like our first build is successful!
 
 ![](/images/code-build-build-success.png)
 
@@ -20,6 +20,6 @@ Then you can drill into that specific run by selecting the "Build run" link.
 
 After the CodeBuild build runs, then it reports the successful or unsuccessful status to GitHub.
 
-TBD IMAGE - GitHub success
+![](/images/github-success.png)
 
 But what happens if our build is failing? Let's see how to fix it in the next step!

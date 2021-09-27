@@ -6,7 +6,7 @@ weight = 50
 
 # Create a CodeBuild Project
 
-AWS CodeBuild is used to execute our application tests and provide the status of these tests to GitHub. If the tests do not pass, CodeBuild marks the build as Failed and this status is reported to GitHub. In our architecture, we rely on webhooks that are automatically created by CodeBuild to trigger a build of our application code every time there is a commit to the main branch of the GitHub repository.
+AWS CodeBuild is used to execute our application tests and provide the status of these tests to GitHub. If the tests do not pass, CodeBuild marks the build as Failed and this status is reported to GitHub so our broken application code won't be deployed to the container service. In our architecture, we rely on webhooks that are automatically created by CodeBuild to trigger a build of our application code every time there is a commit to the main branch of the GitHub repository.
 
 Let's create the CodeBuild project!
 

@@ -6,7 +6,7 @@ weight = 40
 
 # Create ECS Infrastructure
 
-Next, we'll create the Amazon ECS Infrastructure we'll deploy our Flask app to using the Cloud Development Kit (CDK).
+Next, we'll create the Amazon ECS Infrastructure we'll deploy our Flask app to using the Cloud Development Kit (CDK). Go back to your Cloud9 development environment, where we'll complete the steps on this page.
 
 ## 1. Update the aws-cdk command line package
 
@@ -46,7 +46,7 @@ cdk init --language python
 pip install -r requirements.txt
 ```
 
-## 5. Install other requirements
+## 5. Install AWS requirements
 
 ```
 pip install aws_cdk.aws_ec2 aws_cdk.aws_ecs aws_cdk.aws_ecr aws_cdk.aws_iam

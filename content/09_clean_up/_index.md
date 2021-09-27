@@ -34,7 +34,7 @@ In the AWS Console, navigate to the Cloud9 service.
 
 ![](/images/nav-cloud9.png)
 
-Select the Delete button to delete the environment and confirm by typing the confirmation text.
+Select the "Delete" button to delete the environment and confirm by typing the confirmation text.
 
 ![](/images/delete-cloud9.png)
 
@@ -44,7 +44,7 @@ In the AWS Console, navigate to the CodeBuild service.
 
 ![](/images/nav-codebuild.png)
 
-Select the project and then select the Delete build project button to delete the CodeBuild project. Confirm by typing the confirmation text.
+Select the project and then select the "Delete build project" button to delete the CodeBuild project. Confirm by typing the confirmation text.
 
 ![](/images/delete-codebuild.png)
 
@@ -55,6 +55,6 @@ In the AWS Console, navigate to the IAM service.
 ![](/images/nav-iam.png)
 
 
-Select Users from the menu and select the `github-actions-user` to delete. Select the Delete button to delete the IAM user. Confirm by typing the confirmation text.
+Select "Users" from the menu and select the `github-actions-user` to delete. Select the "Delete" button to delete the IAM user. Confirm by typing the confirmation text.
 
 ![](/images/delete-iam-user.png)

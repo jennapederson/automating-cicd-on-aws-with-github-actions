@@ -144,7 +144,7 @@ Save the file.
 
 ## 7. Update the task-definition.json file
 
-The `task-definition.json` file contains specifications for an ECS Task Definition. In this file, replace the placeholder value (<YOUR_AWS_ACCOUNT_ID>) with your AWS Account ID. You can find your AWS Account ID in the AWS Console, in the upper right drop-down menu under your login info. It is labeled "My Account".
+The `task-definition.json` file contains specifications for an ECS Task Definition. In this file, replace the placeholder value (<YOUR_AWS_ACCOUNT_ID>) with your AWS Account ID. You can find your AWS Account ID in the [AWS Console](https://console.aws.amazon.com/), in the upper right drop-down menu under your login info. It is labeled "My Account".
 
 ```
 {

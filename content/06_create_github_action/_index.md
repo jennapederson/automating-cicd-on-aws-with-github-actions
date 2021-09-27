@@ -16,12 +16,13 @@ Go to your `demo-github-actions` repository on GitHub. On the Actions tab, fin
 
 ![](/images/gh-action-choose-workflow-2.png)
 
-Following the instructions outlined in the starter workflow file for using this workflow with our application, we will reference the ECR repository, ECS task definition, ECS cluster, and ECS service that we created previously. Here are the specific steps to complete if you don't want to read through the starter workflow instructions:
+The instructions are outlined in detail in the starter workflow file for using this workflow with our application. We will reference the ECR repository, ECS task definition, ECS cluster, and ECS service that we created previously. Here are the specific steps you'll need to complete:
 
-  1. Replace the `ECR_REPOSITORY` environment variable with  `ecs-devops-sandbox-repository`
+  1. Replace the value of the `ECR_REPOSITORY` environment variable with  `ecs-devops-sandbox-repository`
   1. Set the value of aws-region to `us-east-1` (or whatever region is shown in the upper right of the AWS Console)
   1. Set the value of container-name to `ecs-devops-sandbox`
   1. Set the value of service to `ecs-devops-sandbox-service`
+  1. Set the value of cluster to `ecs-devops-sandbox-cluster`
 
 Once you've made the changes to the aws.yml workflow file above, select "Start commit". Enter a commit message (or use the default) and select "Commit new file".
 
@@ -37,11 +38,61 @@ Under "Users", click "Add users" and set the "User name" to `github-actions-user
 
 Press "Next: Permissions".
 
-Next, select "Attach existing policies directly" and check "AdministratorAccess".
+Next, select "Attach existing policies directly" and select the "Create policy" button.
 
-![](/images/iam-policy.png)
+![](/images/iam-create-policy.png)
 
-Press "Next: Tags" and then press "Next: Review" and "Create user".
+Navigate to the JSON tab and replace the policy with this one below. Replace the placeholder value (<YOUR_AWS_ACCOUNT_ID>) with your AWS Account ID. You can find your AWS Account ID in the [AWS Console](https://console.aws.amazon.com/), in the upper right drop-down menu under your login info. It is labeled "My Account".
+
+```
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "ecr:GetAuthorizationToken",
+                "ecs:RegisterTaskDefinition",
+                "sts:GetCallerIdentity"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "ecr:BatchCheckLayerAvailability",
+                "ecr:CompleteLayerUpload",
+                "ecr:InitiateLayerUpload",
+                "ecr:PutImage",
+                "ecr:UploadLayerPart"
+            ],
+            "Resource": "arn:aws:ecr:us-east-1:<YOUR_AWS_ACCOUNT_ID>:repository/ecs-devops-sandbox-repository"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "ecs:DescribeServices",
+                "ecs:UpdateService"
+            ],
+            "Resource": [
+                "arn:aws:ecs:us-east-1:<YOUR_AWS_ACCOUNT_ID>:service/default/ecs-devops-sandbox-service",
+                "arn:aws:ecs:us-east-1:<YOUR_AWS_ACCOUNT_ID>:service/ecs-devops-sandbox-cluster/ecs-devops-sandbox-service"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "iam:PassRole"
+            ],
+            "Resource": "arn:aws:iam::<YOUR_AWS_ACCOUNT_ID>:role/ecs-devops-sandbox-execution-role"
+        }
+    ]
+}
+```
+
+Press "Next: Tags" and then press "Next: Review" and give it a name `ecs-devops-sandbox-policy`. Then press "Create policy". Once the policy is created successfully, close the browser tab to return to the IAM user you were creating.
+
+Press the refresh button to refresh the list of policies and search for the one you just created, `ecs-devops-sandbox-policy`. Check the box for this policy and then press "Next: Tags", "Next: Review", and "Create user" buttons to create the IAM user.
 
 Note down the "AWS ACCESS KEY ID" and the "AWS SECRET ACCESS KEY" to use in the next step. Treat these like a username and password. If you lose the "AWS SECRET ACCESS KEY", you'll need to generate a new one.
 
