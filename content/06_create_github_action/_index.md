@@ -42,7 +42,7 @@ Next, select "Attach existing policies directly" and select the "Create policy" 
 
 ![](/images/iam-create-policy.png)
 
-Navigate to the JSON tab and replace the policy with this one below. Replace the placeholder value (<YOUR_AWS_ACCOUNT_ID>) with your AWS Account ID. You can find your AWS Account ID in the [AWS Console](https://console.aws.amazon.com/), in the upper right drop-down menu under your login info. It is labeled "My Account".
+Navigate to the JSON tab and replace the policy with this one below. Replace the placeholder values (<YOUR_AWS_ACCOUNT_ID> and <YOUR_AWS_REGION>) with your AWS Account ID and the region you are using. You can find your AWS Account ID in the [AWS Console](https://console.aws.amazon.com/), in the upper right drop-down menu under your login info. It is labeled "My Account".
 
 ```
 {
@@ -66,7 +66,7 @@ Navigate to the JSON tab and replace the policy with this one below. Replace the
                 "ecr:PutImage",
                 "ecr:UploadLayerPart"
             ],
-            "Resource": "arn:aws:ecr:us-east-1:<YOUR_AWS_ACCOUNT_ID>:repository/ecs-devops-sandbox-repository"
+            "Resource": "arn:aws:ecr:<YOUR_AWS_REGION>:<YOUR_AWS_ACCOUNT_ID>:repository/ecs-devops-sandbox-repository"
         },
         {
             "Effect": "Allow",
@@ -75,8 +75,8 @@ Navigate to the JSON tab and replace the policy with this one below. Replace the
                 "ecs:UpdateService"
             ],
             "Resource": [
-                "arn:aws:ecs:us-east-1:<YOUR_AWS_ACCOUNT_ID>:service/default/ecs-devops-sandbox-service",
-                "arn:aws:ecs:us-east-1:<YOUR_AWS_ACCOUNT_ID>:service/ecs-devops-sandbox-cluster/ecs-devops-sandbox-service"
+                "arn:aws:ecs:<YOUR_AWS_REGION>:<YOUR_AWS_ACCOUNT_ID>:service/default/ecs-devops-sandbox-service",
+                "arn:aws:ecs:<YOUR_AWS_REGION>:<YOUR_AWS_ACCOUNT_ID>:service/ecs-devops-sandbox-cluster/ecs-devops-sandbox-service"
             ]
         },
         {

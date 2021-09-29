@@ -10,7 +10,7 @@ Before starting the workshop, ensure that the region selected for the workshop s
 
 We'll use the AWS Cloud 9 service to setup your environment. Cloud9 comes pre-installed with AWS CLI packages, git, python, and many other useful utilities along with built-in IDE functionalities. Once logged in, you can use this Browser based IDE for coding and the bash shell to run terminal commands.
 
-1. In the AWS Console, navigate to the [Cloud9 service](https://console.aws.amazon.com/cloud9/home?region=us-east-1).
+1. In the AWS Console, navigate to the [Cloud9 service](https://console.aws.amazon.com/cloud9/home).
 
 ![](/images/nav-cloud9.png)
 

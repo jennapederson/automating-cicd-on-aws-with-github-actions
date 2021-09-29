@@ -32,7 +32,7 @@ Confirm with a `y` that you want to delete the EcsDevopsSandboxCdkStack.
 
 If you remember, our CDK code created the repository that we used to store container images. When we destroyed the CDK infrastructure in the last step, it skipped the ECR repository because it still contains data, or container images. This is a safeguard so that you don't accidentally delete your container images. This means we'll have to manually delete the container images and then delete the repository.
 
-Go back to the AWS Console and navigate to [ECR](https://console.aws.amazon.com/ecr/repositories?region=us-east-1).
+Go back to the AWS Console and navigate to [ECR](https://console.aws.amazon.com/ecr/repositories).
 
 Select the `ecs-devops-sandbox-repository` repository and then press the "Delete" button. Enter the confirmation text, noting that all of our container images will also be deleted. 
 

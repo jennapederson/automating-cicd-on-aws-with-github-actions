@@ -56,7 +56,7 @@ If we revert our change and push the fix to GitHub again, we can then see that i
 
 ![](/images/github-build-fixed.png)
 
-Finally, we can see that the [ECS Task Definition](https://console.aws.amazon.com/ecs/home?region=us-east-1#/taskDefinitions/ecs-devops-sandbox-task-definition/status/ACTIVE) has been updated to reflect the new application container image. Note that the Git commit hash is used as the container image tag.
+Finally, we can see that the [ECS Task Definition](https://console.aws.amazon.com/ecs/home#/taskDefinitions/ecs-devops-sandbox-task-definition/status/ACTIVE) has been updated to reflect the new application container image. Note that the Git commit hash is used as the container image tag.
 
 ![](/images/ecs-task-definition-1.png)
 

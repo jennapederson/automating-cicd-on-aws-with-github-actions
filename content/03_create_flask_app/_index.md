@@ -189,7 +189,11 @@ git add . && git commit -m "Initial commit - basic Flask app"
 
 ## 9. Create GitHub repository
 
-Now we need to create a repository on GitHub and push our local changes to it. Go to https://github.com and select the "New" button to create a new repository. Enter `demo-github-actions` for the repository name and select the "Create repository" to create it.
+Now we need to create a repository on GitHub and push our local changes to it. Go to https://github.com and select the "New" button to create a new repository. Enter `demo-github-actions` for the repository name and set it to "Private". Select the "Create repository" button to create your new repository.
+
+{{% notice note %}}
+You can create a public repository, however since we are putting our AWS account ID in the `task-definition.json` file, a private repository will keep it more secure.
+{{% /notice %}}
 
 ![](/images/create-github-repo.png)
 
@@ -198,10 +202,10 @@ Now we need to create a repository on GitHub and push our local changes to it. G
 Go back to the terminal in your Cloud9 development environment and add the GitHub remote repository as origin:
 
 ```
-git remote add origin git@github.com:<YOUR GITHUB PROFILE>/demo-github-actions.git
+git remote add origin https://github.com/<YOUR GITHUB PROFILE>/demo-github-actions.git
 ```
 
-You can also find this command at the bottom of your brand new repository on GitHub.
+You can also find this command at the bottom of your brand new repository on GitHub. Just be sure to select HTTPS if you're using a personal token.
 
 Then push your local changes:
 

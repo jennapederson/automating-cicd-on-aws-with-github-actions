@@ -14,7 +14,7 @@ The following steps will be completed in the AWS Console.
 
 ## 1. Configure Project
 
-Navigate to [AWS CodeBuild](https://console.aws.amazon.com/codesuite/codebuild/start?region=us-east-1) and select "Create project"
+Navigate to [AWS CodeBuild](https://console.aws.amazon.com/codesuite/codebuild/start) and select "Create project"
 
 ![](/images/code-build-create.png)
 
