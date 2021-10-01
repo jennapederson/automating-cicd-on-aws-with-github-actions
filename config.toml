@@ -16,6 +16,24 @@ disableShortcutsTitle=true
 
 [[menu.shortcuts]]
 name = "<i class='fab fa-twitter fa-lg'></i> @jennapederson"
-identifier = "tw"
-url = "https://twitter.com/intent/user?screen_name=jennapederson"
+identifier = "tw1"
+url = "https://twitter.comjennapederson"
 weight = 1
+
+[[menu.shortcuts]]
+name = "<i class='fab fa-linkedin fa-lg'></i> /in/jennapederson"
+identifier = "li1"
+url = "https://www.linkedin.com/in/jennapederson/"
+weight = 2
+
+[[menu.shortcuts]]
+name = "<i class='fab fa-twitter fa-lg'></i> @web_goddess"
+identifier = "tw2"
+url = "https://twitter.com/web_goddess"
+weight = 3
+
+[[menu.shortcuts]]
+name = "<i class='fab fa-linkedin fa-lg'></i> /in/kristinehoward"
+identifier = "li2"
+url = "https://www.linkedin.com/in/kristinehoward/"
+weight = 4
