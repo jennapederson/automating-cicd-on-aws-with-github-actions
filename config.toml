@@ -17,7 +17,7 @@ disableShortcutsTitle=true
 [[menu.shortcuts]]
 name = "<i class='fab fa-twitter fa-lg'></i> @jennapederson"
 identifier = "tw1"
-url = "https://twitter.comjennapederson"
+url = "https://twitter.com/jennapederson"
 weight = 1
 
 [[menu.shortcuts]]
