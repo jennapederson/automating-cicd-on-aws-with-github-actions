@@ -10,7 +10,7 @@ AWS provides a starter GitHub workflow that takes advantage of the AWS open-sour
 
 ## 1. Setup GitHub Action
 
-Go to your `demo-github-actions` repository on GitHub. On the Actions tab, find "Deploy to Amazon ECS" and select "Set up this workflow".
+Go to your `demo-github-actions` repository on GitHub. On the Actions tab, find "Deploy to Amazon ECS" and select "Configure".
 
 ![](/images/gh-action-choose-workflow-1.png)
 
@@ -108,12 +108,13 @@ To deploy to ECR we need to give GitHub permission to speak to AWS. To do that w
 Secrets are environment variables that are encrypted and can be used by your GitHub action workflow to access external resources like AWS.
 
 1. Go to the Settings tab of your GitHub repository
-2. Select Secrets
+2. Select Secrets -> Actions
 3. Select New repository secret
 4. Set Name to `AWS_ACCESS_KEY_ID`
 5. Set value to the access key id you copied from the previous section.
-6. Set Name to `AWS_SECRET_ACCESS_KEY`
-7. Set the value to the secret access key you copied from the previous section.
+6. Select New repository secret to add the second one
+7. Set Name to `AWS_SECRET_ACCESS_KEY`
+8. Set the value to the secret access key you copied from the previous section.
 
 You should now have two secrets like this:
 
@@ -139,17 +140,7 @@ In your Cloud9 editor, select the gear in the left navigation and select "Show H
 
 ![](/images/cloud9-gear-hidden-files.png)
 
-Instead of triggering the workflow when a release is created, we want to change it to trigger when changes are pushed to the main branch.
-
-In the `.github/workflows/aws.yml` file, replace these lines:
-
-```
-on:
-  release:
-    types: [created]
-```
-
-with these lines:
+We want to trigger a build when changes are pushed to the main branch. Ensure the following is in the `.github/workflows/aws.yml` file, with the same indentation:
 
 ```
 on:
@@ -158,11 +149,9 @@ on:
       - main
 ```
 
-Be sure to retain the indentation you see above as it's important in this file.
-
 ## Add Step to Check Build Commit Status
 
-Now we need to add a step to workflow to check the build commit status. If the CodeBuild workflow is unsuccessful, the workflow exists.
+Now we need to add a step to the workflow to check the build commit status. If the CodeBuild workflow is unsuccessful, the workflow exits.
 
 Add the following as the first step under steps to your `.github/workflows/aws.yml` file:
 
