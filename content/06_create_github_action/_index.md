@@ -149,6 +149,16 @@ on:
       - main
 ```
 
+## Add Permissions to Read Commit Statuses
+
+To check if your build is successful, we need read access on the statuses API. Add `statuses: read` to the `permissions` block like below:
+
+```
+permissions:
+  contents: read
+  statuses: read
+```
+
 ## Add Step to Check Build Commit Status
 
 Now we need to add a step to the workflow to check the build commit status. If the CodeBuild workflow is unsuccessful, the workflow exits.
@@ -161,11 +171,11 @@ steps:
   id: commit-status
   run: |
     # Check the status of the Git commit
-    CURRENT_STATUS=$(curl --url https://api.github.com/repos/${{ github.repository }}/commits/${{ github.sha }}/status --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' | jq -r '.state');
+    CURRENT_STATUS=$(curl --url https://api.github.com/repos/${{ github.repository }}/commits/${{ github.sha }}/status --header 'authorization: token ${{ secrets.GITHUB_TOKEN }}' | jq -r '.state');
     echo "Current status is: $CURRENT_STATUS"
     while [ "${CURRENT_STATUS^^}" = "PENDING" ];
       do sleep 10;
-      CURRENT_STATUS=$(curl --url https://api.github.com/repos/${{ github.repository }}/commits/${{ github.sha }}/status --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' | jq -r '.state');
+      CURRENT_STATUS=$(curl --url https://api.github.com/repos/${{ github.repository }}/commits/${{ github.sha }}/status --header 'authorization: token ${{ secrets.GITHUB_TOKEN }}' | jq -r '.state');
     done;
     echo "Current status is: $CURRENT_STATUS"
     if [ "${CURRENT_STATUS^^}" = "FAILURE" ];
