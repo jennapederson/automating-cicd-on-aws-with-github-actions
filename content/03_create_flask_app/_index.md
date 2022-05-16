@@ -57,6 +57,9 @@ And add this basic Flask code to `app.py` and save the file.
 from flask import Flask
 app = Flask(__name__)
 
+@app.route("/")
+def health_check():
+    return "Healthy!"
 
 @app.route('/<random_string>')
 def returnBackwardsString(random_string):
@@ -100,7 +103,7 @@ Save the file.
 The `requirements.txt` file contains dependencies for `app.py`. In this file, add the flask requirement:
 
 ```
-flask==1.1.2
+flask>=2.1.2
 ```
 
 Save the file. 
@@ -136,6 +139,8 @@ COPY requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
 # Install application
 COPY app.py ./
+# Open port app runs on
+EXPOSE 8080
 # Run application
 CMD python app.py
 ```
