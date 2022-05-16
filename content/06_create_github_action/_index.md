@@ -190,7 +190,7 @@ Again, be sure to retain the indentation in this file.
 Commit these changes:
 
 ```
-git add . && git commit -m "Update workflow to run on push to main branch"
+git add . && git commit -m "Update workflow to allow read permissions on statuses API"
 ```
 
 And push to GitHub:
